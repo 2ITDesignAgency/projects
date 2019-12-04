@@ -1,0 +1,467 @@
+ body {
+    font-family: 'Roboto Condensed', sans-serif;  
+    /* overflow: hidden; */
+    margin: 0;
+    padding: 0;
+}
+
+.hero.scrolled {
+    background-color: #000000 !important;
+    color: #fff;
+    transition: background-color 200ms linear;
+    /* height: 5%; */
+  }
+
+.nav-up {
+    top: -40px;
+}
+
+
+li {
+    list-style: none;
+}
+ 
+ /* section 2 css home start */
+ .page-header h1 {
+font-size: 1.6em;
+text-align: center;
+font-weight: lighter;
+padding: 2.5em 0;
+ }
+
+ .page-header2 h1 {
+    font-size: 1.6em;
+    text-align: center;
+    font-weight: lighter;
+    padding: 1em 0;
+     }
+
+.service-text{
+    margin-bottom: 1em;
+}
+
+ .blog-image{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+ }
+
+ .services{
+    padding: 4em 0;
+    
+ }
+/*------------------------ 2 Home ------------------------*/
+
+.herosection{
+    padding-top: 17%;
+    padding-bottom: 17%;
+    padding-left:5%; 
+    background: url(images/ban.jpg) no-repeat;
+    background-size: cover;
+    display: table;
+    width: 100%;
+    position: relative;
+ }
+
+.main:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: -1;
+    opacity: .85;
+    position: absolute;
+     
+}
+.nav-icon{
+        margin-left: 990px;
+        margin-top: -540px;
+   }
+.main-title {
+    font-size: 24px;
+    line-height: 28px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.hello {
+    color: #fff;
+    line-height: 51px;
+}
+
+.main-content {
+    padding: 0 60px;
+    vertical-align: middle;
+    display: table-cell;
+    height: 100%;
+    width: 100%;
+}
+
+    .logo a{
+        color: orange;
+        margin-left: 30px;
+        font-size: 30px;
+    }
+  
+    .logo a:hover{
+        text-decoration: none;
+    }
+
+/*------------------------ 2.1 Full Menu ------------------------*/
+
+.full-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    opacity: 0;
+    visibility: hidden;   
+    transition: opacity 0.3s 0s, visibility 0s 0.3s;
+}
+
+/* Full Menu */
+
+.full-menu .modal-close {
+    /* 'X' icon */
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    padding: 50px;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    background:rgba(0, 0, 0, 0.3) url(images/cd-icon-close.svg)no-repeat center center;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;     
+    transform: scale(0);
+    visibility 0s 0.3s, opacity 0.3s 0s;
+     
+    transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
+}
+
+.no-touch .full-menu .modal-close:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.full-menu.visible {
+    background-size: 100%;
+    opacity: 1;
+    visibility: visible;   
+    transition: opacity 0.7s, visibility 0s;
+}
+
+.full-menu.visible .fullmenu-content {
+    -webkit-overflow-scrolling: touch;
+}
+
+.full-menu.visible .modal-close {
+    visibility: visible;
+    opacity: 1;    
+    transition: transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s;     
+    transform: scale(1);
+}
+
+@media only screen and (min-width: 1100px) {
+    .full-menu .fullmenu-content {
+        padding: 6em 5%;
+    }
+    .full-menu .modal-close {
+        height: 60px;
+        width: 60px;
+    }
+    .full-menu p {
+        font-size: 25px;
+    }
+}
+
+.cd-transition-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.cd-transition-layer .bg-layer {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateY(-50%) translateX(-2%);   
+    transform: translateY(-50%) translateX(-2%);     
+    height: 100%;
+    /* our sprite is composed of 25 frames */
+    width: 2500%;
+    background: url(images/ink.png) no-repeat 0 0;
+    background-size: 100% 100%;
+}
+
+.cd-transition-layer.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cd-transition-layer.opening .bg-layer {     
+    animation: cd-sequence 1.0s steps(24);     
+    animation-fill-mode: forwards;
+}
+
+.cd-transition-layer.closing .bg-layer {     
+    animation: cd-sequence-reverse 1.0s steps(24);    
+    animation-fill-mode: forwards;
+}
+
+.no-cssanimations .cd-transition-layer {
+    display: none;
+}
+
+ 
+@keyframes cd-sequence {
+    0% {
+        transform: translateY(-50%) translateX(-2%);
+    }
+    100% {        
+        transform: translateY(-50%) translateX(-98%);
+    }
+}
+
+    
+    
+  
+@keyframes cd-sequence-reverse {
+    0% {
+         
+        transform: translateY(-50%) translateX(-98%);
+    }
+    100% {
+         
+        transform: translateY(-50%) translateX(-2%);
+    }
+}
+
+
+/*------------------------ 2.2 Header ------------------------*/
+
+.full-menu .fullmenu-content {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+
+.page-menu {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.page-menu li {
+    line-height: 50px;
+    margin-left: -25px;
+}
+
+.page-menu li:last-child {
+    line-height: 90px;
+}
+
+.page-menu li a {
+    color: #fff;
+    font-size: 26px;
+    position: relative;
+    font-weight: 500;
+     
+}
+
+.social img {
+    width: 25px;
+}
+
+.main .social {
+    margin-top: 30px;
+}
+
+.social a {
+    margin-right: 20px;
+}
+
+.social a:hover img {
+    opacity: .6;
+    transition: all ease 0.3s;
+}
+
+.social a:last-child {
+    margin-right: 0px;
+}
+
+ 
+ 
+
+header {
+    position: fixed;
+    padding: 30px;
+    top: 0;
+    width: 80%;
+    z-index: 2;
+}
+
+
+.nav-icon {
+    width: 23px;
+    height: 18px;
+    position: relative;    
+    transform: rotate(0deg);     
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    margin-top: 7px;
+}
+
+.nav-icon span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #fff;
+    opacity: 1;    
+    transform: rotate(0deg);   
+    transition: .25s ease-in-out;
+}
+
+.nav-icon span:nth-child(1) {
+    top: 0px;     
+    transform-origin: left center;
+}
+
+.nav-icon span:nth-child(2) {
+    top: 6px;    
+    transform-origin: left center;
+}
+
+.nav-icon span:nth-child(3) {
+    top: 12px;     
+    transform-origin: left center;
+    width: 60%;
+    right: 0 !important;
+}
+
+.nav-icon:hover span:nth-child(3) {
+    width: 100%;
+}
+
+/* footer css start------------------------------------------------------------------------------------------------------------------->*/
+.footer{
+    background-color: #000;
+    padding-top: 2em;
+}
+.footer-menu{
+    border-bottom: lightgray 1px solid;
+}
+.footer li {
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    line-height: 1.85rem;
+    font-weight: lighter;
+}
+.footer-title{
+    font-size: 1.1em !important;
+    font-weight: lighter;
+}
+.footer a{
+    text-decoration: none;
+    color: white;
+}
+.footer a:hover{
+    text-decoration: none;
+    color: white;
+}
+.credits{
+    color:white;
+}
+
+ul {
+    font-weight: lighter;;
+}
+li {
+    font-weight: lighter;;
+}
+
+/* footer css end------------------------------------------------------------------------------------------------------------------->*/
+
+
+/* number section css start ------------------------------------------------------------------------------------------------------->*/
+#about {
+    padding: 100px 0 50px
+}
+
+@media(max-width:767px) {
+    #about {
+        text-align: center
+    }
+}
+
+#about .position-relative {
+    position: relative
+}
+
+#about .border-right-b {
+    border-right: 1px solid #000;
+    max-height: 60px
+}
+
+@media(max-width:991px) {
+    #about .border-right-b {
+        border: 0
+    }
+    #about {
+        padding: 20px 15px
+    }
+}
+
+#about .about-onepage-text-sub {
+    margin-left: 15px
+}
+
+#about .about-onepage-text-sub .black-text {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    color: #000
+}
+
+#about .about-onepage-text-sub p {
+    min-height: 65px;
+    font-size: 14px;
+    line-height: 20px!important;
+    margin: 20px 0
+}
+
+#about .number {
+    font-size: 45px;
+    line-height: 57px;
+    min-height: 60px;
+    display: flex;
+    font-weight: 100
+}
+
+@media(max-width:767px) {
+    #about .number {
+        display: block
+    }
+}
+
+#about .number.number-hover {
+    display: none
+}
+/* number section css end---------------------------------------------------------------------------------------------------------------> */
+
+
