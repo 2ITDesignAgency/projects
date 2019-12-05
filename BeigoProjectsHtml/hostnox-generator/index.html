@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="PasswordApp">
+		<head>
+				<meta charset="utf-8">
+				<meta http-equiv="X-UA-Compatible" content="IE=edge">
+				<meta name="viewport" content="width=device-width, initial-scale=1">
+				<meta name="description" content="Use our online Strong Password Generator to create a secure and safe passwords instantly free that is secure and difficult to crack or guess.">
+				<meta name="author" content="Foxflue">
+				<title>Web Site Title</title>
+			
+				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+				<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+				<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+				<link rel="stylesheet" type="text/css" href="style.css">
+				<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css'>
+
+
+				<!-- ./CSS -->
+			
+				<!-- hostnox css start -->
+				<link rel="stylesheet" href="css/custom.css">
+				<link rel="stylesheet" href="css/font-awesome.min.css">
+				<link rel="stylesheet" href="css/hostnox.css">
+				<link rel="stylesheet" href="css/main.css">
+				<!-- hostnox css end -->
+			
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+				<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+				  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+				  crossorigin="anonymous"></script>
+				  <!-- Ending -->
+			</head>
+<body>
+	<!-- Header -->
+	<header id="header" class="header-dynamic header-shadow-scroll">
+			<div class="container">
+				<a class="logo" href="index.php">
+					<img src="img/logos/logo_blue.png" alt="Hostnox">
+				</a>
+				<nav>
+					<ul class="nav-primary">
+						<li>
+							<a href="#" title="Web Hosnting Plans">Web Hosting Plans</a>
+							<ul>
+								<li>
+									<a href="cloud-hosting.php">Cloud Hosting</a>
+								</li>
+								<li>
+									<a href="cloud-reseller-hosting.php">Reseller Hosting</a>
+								</li>	
+								</li>	
+								<li>
+									<a href="cloud-server.php">Cloud VM Server</a>
+								</li>									
+								<li>
+									<a href="cloud-windows-vm.php">Cloud VM Windows Servers</a>
+								</li>								
+								<li>
+									<a href="europe-dedicated-server.php">Dedicated Servers</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">Domain Names</a>
+							<ul>
+								<li>
+									<a href="https://billing.hostnox.gr/cart.php?a=add&domain=register&language=english">New Domain Registration</a>
+								</li>
+								<li>
+									<a href="https://billing.hostnox.gr/cart.php?a=add&domain=transfer&language=english">Transfer a Domain</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="https://billing.hostnox.gr/cart.php?gid=7">SSL Certificates</a>
+						</li>
+						<li>
+							<a class="button button-secondary" href="https://billing.hostnox.gr/clientarea.php">
+								<i class="fa fa-lock icon-left"></i>Client Login
+							</a>
+						</li>
+					</ul>
+					<ul class="nav-secondary">
+						<li>
+							<a href="tel:+30 210 300 5125"><i class="fa fa-phone icon-left"></i>+30 210 300 5125</a>
+						</li>
+						<li>
+							<a href="https://billing.hostnox.gr/submitticket.php/?language=english"><i class="fa fa-comment icon-left"></i>Get Support</a>
+						</li>
+						<li>
+							<a href="https://billing.hostnox.gr/knowledgebase.php/?language=english"><i class="fa fa-question-circle icon-left"></i>Knowledge Base</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+<div class="container" data-ng-controller="PasswordAppController">
+<!-- header end -->
+<div class="row">
+	<div class="col-md-12">
+		<div class="widgets box">
+			<div class="box-head w-bh"><h3 class="text-center">Password Generator Tool</h3></div>
+				<form class="widgets-form" role="form">
+				<div class="row">
+				<div class="col-md-4"><label><i class="fa fa-hand-o-right" aria-hidden="true"></i>
+ Password Leanth:</label></div>
+				<div class="col-md-8">     
+                            <input type="range" class="range-pgt" min="6" max="50" step="1" value="12" data-ng-model="passwordLength"><span class="range-slider__value">{{passwordLength}}</span> 
+                        </div>
+				</div>
+				<div class="row">
+				<div class="col-md-4"><label><i class="fa fa-hand-o-right" aria-hidden="true"></i>
+ Include Symbols:</label></div>
+				<div class="col-md-8">
+				<label class="checkbox-inline"><input type="checkbox" data-ng-model="addSymbols"> (e.g. @#$%)</label>
+				</div>
+				</div>
+				<div class="row">
+				<div class="col-md-4"><label><i class="fa fa-hand-o-right" aria-hidden="true"></i>
+ Include Numbers:</label></div>
+				<div class="col-md-8">
+					<label class="checkbox-inline"><input type="checkbox" data-ng-model="addNumbers"> (e.g. 123456)</label>
+				</div>
+				</div>
+				<div class="row">
+				<div class="col-md-6"><label><i class="fa fa-hand-o-right" aria-hidden="true"></i>
+ Include Uppercase Characters:</label></div>
+				<div class="col-md-6">
+					<label class="checkbox-inline"><input type="checkbox" data-ng-model="addUpper"> (e.g. ABCDEF)</label>
+				</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<button type="button" class="btn btn-primary btn-lg w-btn" name="submit" id="load" data-loading-text="Generating <i class='fa fa-spinner fa-spin '></i>" data-ng-click="createPassword()"><i class="fa fa-bolt" aria-hidden="true"></i> Generate</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2 result-label">Result:</div>
+					<div class="col-md-7">
+						<div data-ng-model="password" id="password">
+                         <input type="text" class="form-control" data-ng-model="password" id="password1" placeholder="The new strong password will appear here">	
+                       </div>
+					</div>
+					<div class="com-md-1 copy"><button type="button" class="btn btn-primary" data-clipboard-action="copy" data-clipboard-target="#password1"><i class="fa fa-clone" aria-hidden="true"></i><span> Copy Password</span></button></div>
+				</div>
+				</form>
+		</div>
+	</div>
+	
+ <!-- Js -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ <!-- ./Js -->
+<script>
+        $(document).ready(function(){
+          $("#load").on('click', function(){
+          	 var $this = $(this);
+			  $this.button('loading');
+			    setTimeout(function() {
+			       $this.button('reset');
+			   }, 500);
+          });
+        });
+      var clipboard = new Clipboard('.btn');
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+        <script src="js/ui-bootstrap-tpls-0.11.0.min.js"></script>
+        <script src="js/application.js"></script>
+</body>
+</html>
