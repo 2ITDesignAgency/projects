@@ -6,7 +6,7 @@
 }
 
 .hero.scrolled {
-    background-color: #000000 !important;
+    background-color: #343a40 !important;
     color: #fff;
     transition: background-color 200ms linear;
     /* height: 5%; */
@@ -42,8 +42,8 @@ padding: 2.5em 0;
 
  .blog-image{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 1.5em;
-    margin-top: 1.5em;
+    margin-bottom: 1.5em !important;
+    margin-top: 1.5em !important;
  }
 
  .services{
@@ -141,9 +141,7 @@ padding: 2.5em 0;
     white-space: nowrap;
     visibility: hidden;
     opacity: 0;     
-    transform: scale(0);
-    visibility 0s 0.3s, opacity 0.3s 0s;
-     
+    transform: scale(0);     
     transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
 }
 
@@ -358,9 +356,19 @@ header {
 }
 
 /* footer css start------------------------------------------------------------------------------------------------------------------->*/
+@media (max-width: 960px) and (min-width: 200px){
+.list-unstyled li {
+    width: 100% !important;
+}
+}
 .footer{
-    background-color: #000;
+    background-color: #343a40;
     padding-top: 2em;
+}
+
+.footer__rights-reserved{
+    color:#fff;
+    text-align: center;
 }
 .footer-menu{
     border-bottom: lightgray 1px solid;
@@ -389,12 +397,19 @@ header {
 }
 
 ul {
-    font-weight: lighter;;
+    font-weight: lighter;
 }
 li {
-    font-weight: lighter;;
+    font-weight: lighter;
 }
 
+@media (max-width: 960px) and (min-width: 501px) {
+    .list-unstyled li { width: 50%; } /* Show 2 logos per row on medium devices (tablets, phones in landscape) */
+}
+
+@media (max-width: 500px) {
+    .list-unstyled li { width: 100%; } /* On small screens, show one logo per row */
+}
 /* footer css end------------------------------------------------------------------------------------------------------------------->*/
 
 
@@ -532,7 +547,7 @@ li {
   }
   
   .gallery {
-    padding: 40px 0 300px;
+    padding: 40px 0 120px;
     position: relative;
     overflow: hidden;
   }
@@ -609,7 +624,9 @@ li {
   }
   .port img {
     width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
+
   .port .description {
     float: left;
     width: 50%;
@@ -664,5 +681,49 @@ li {
     transition: all 0.3s ease-in-out;
   }
   
+  /* gallery for mobile start */
+  @media (max-width: 960px) and (min-width: 200px){
+    .gallery ul li {
+        margin-bottom: 15px;
+        width: 45%;
+        position: relative;
+      }
+      .port img {
+        width: 100%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+    
+      .port .description {
+        float: left;
+        width: 100%;
+        max-height: 100%;
+        padding: 0 40px 40px;
+        overflow: auto;
+      }
+      .port h1 {
+        font-size: 35px;
+        line-height: 2.3;
+        padding: 0;
+      }
+      .reverse-row{
+          flex-direction: column-reverse;
+      }
+
+      .nav-icon {
+        margin-left: 0px;
+        margin-top: 20px !important;
+    }
+
+      .herosection{
+    padding-top: 35%;
+    padding-bottom: 35%;
+    padding-left:5%; 
+    background: url(images/ban.jpg) no-repeat;
+    background-size: cover;
+    display: table;
+    width: 100%;
+    position: relative;
+ }
+    }
 /* gallery link css end */
 
